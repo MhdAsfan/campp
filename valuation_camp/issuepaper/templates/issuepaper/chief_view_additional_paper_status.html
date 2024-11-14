@@ -1,0 +1,53 @@
+{% extends 'temp/cheifnav.html' %}
+{% block content %}
+
+
+
+<!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4">Cheif View Assigned Additional Papers</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+{#                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>#}
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Assigned Additional Papers</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+<!-- About Start -->
+    <div class="container-xxl">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.1s">
+
+{#                    SECTION      #}
+
+<table class="table">
+		<tr>
+            <th>Additional Name</th>
+            <th>Paper</th>
+			<th>From</th>
+			<th>To</th>
+			<th>Status</th>
+		</tr>
+{% for i in x %}
+		<tr>
+			<td>{{ i.additional.name}}</td>
+			<td>{{ i.paper.paper }}</td>
+			<td>{{ i.start }}</td>
+        <td>{{ i.end }}</td>
+        <td>{{ i.status }}</td>
+		</tr>
+{% endfor %}
+	</table>
+
+{# END SECTION #}
+
+            </div>
+        </div>
+    </div>
+    </div>
+     {% endblock %}

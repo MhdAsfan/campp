@@ -1,0 +1,75 @@
+{% extends 'temp/nav.html' %}
+{% block content %}
+
+
+
+<!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4">Chief Registration</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+{#                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>#}
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Chief Registration</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+<!-- About Start -->
+    <div class="container-xxl">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.1s">
+
+{#                    SECTION      #}
+
+	<form method="post">
+        {% csrf_token %}
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="un" required=""></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="email" name="email"></td>
+			</tr>
+            <tr>
+				<td>Collage Name</td>
+				<td><input type="text" name="cn" required=""></td>
+			</tr>
+			<tr>
+				<td>phone no</td>
+				<td><input type="text" pattern="[0-9]{10}" name="ph"></td>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="uname"required=""></td>
+			</tr>
+{#            <tr>#}
+{#				<td>Total No of Papers</td>#}
+{#				<td><input type="number" name="tp"></td>#}
+{#			</tr>#}
+			<tr>
+				<td>Password</td>
+				<td><input type="Password" name="ps" required=""></td>
+			</tr>
+			<tr>
+				<td>Confirm Password</td>
+				<td><input type="Password" name="cpwd" required=""></td>
+            </tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Register"></td>
+			</tr>
+		</table>
+	</form>
+{# END SECTION #}
+
+            </div>
+        </div>
+    </div>
+    </div>
+     {% endblock %}

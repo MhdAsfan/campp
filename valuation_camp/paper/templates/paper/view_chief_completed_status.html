@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chief completed status  </title>
+</head>
+<body>
+	<table border="1">
+		  <tr>
+              <th>course</th>
+              <th>sem</th>
+              <th>paper</th>
+              <th>status</th>
+    </tr>
+        {% for i in d %}
+		<tr>
+			<td>{{ i.course.course }}</td>
+			<td>{{ i.sem}}</td>
+			<td>{{ i.paper}}</td>
+            <td>{{ i.status }}</td>
+            <td><a href="">accept</a></td>
+            <td><a href="">reject</a></td>
+		</tr>
+         {% endfor %}
+	</table>
+
+</body>
+</html>

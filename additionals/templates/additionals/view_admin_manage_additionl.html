@@ -1,0 +1,66 @@
+{% extends 'temp/nav.html' %}
+{% block content %}
+
+
+
+<!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4">Additional</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+{#                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>#}
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Manage Additional</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+<!-- About Start -->
+    <div class="container-xxl">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.1s">
+
+{#                    SECTION      #}
+
+	<table class="table">
+		<tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>phone no</th>
+            <th>course </th>
+            <th>sem</th>
+			<th>priority 1</th>
+            <th>priority 2</th>
+            <th>priority 3</th>
+            <th>status</th>
+
+		</tr>
+        {% for i in c %}
+		<tr>
+			<td>{{ i.name }}</td>
+			<td>{{ i.email_id }}</td>
+			<td>{{ i.phone_no }}</td>
+			<td>{{ i.course.course }}</td>
+            <td>{{ i.sem}}</td>
+            <td>{{ i.priority.1 }}</td>
+            <td>{{ i.priority_2 }}</td>
+            <td>{{ i.priority_3 }}</td>
+            <td>{{ i.status }}</td>
+
+
+			<td><a href="/additionals/acceptadmin/{{ i.additional_id }}">Accept</a>
+                <a href="/additionals/rejectadmin/{{ i.additional_id }}">Reject</a></td>
+		</tr>
+        {% endfor %}
+	</table>
+
+{# END SECTION #}
+
+            </div>
+        </div>
+    </div>
+    </div>
+     {% endblock %}

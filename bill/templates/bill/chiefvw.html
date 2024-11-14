@@ -1,0 +1,88 @@
+{% extends 'temp/cheifnav.html' %}
+{% block content %}
+
+
+
+<!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4">Bill</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="/temp/chief/">Home</a></li>
+{#                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>#}
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Bill</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+<!-- About Start -->
+    <div class="container-xxl">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.1s">
+
+{#                    SECTION      #}
+	<form method="post">
+        {% csrf_token %}
+		<table class="table">
+    <th  colspan="11">UNIVERSITY OF CALICUT
+(Pareeksha Bhavan)<br>
+
+Consolidated Remuneration Bill in connection with Evaluation of Answer Scripts
+
+<br> Name of Examination : Sixth Sem B.Sc/BCA March 2022 Total No. of Scripts :2239<br>
+Subject : COMPUTER SCIENCE<br>
+Centre of CV Camp :<br>
+Name of Chairman & College :
+Date 23-5-22 to 27-5-22</th>
+
+		<tr style="border: solid">
+            <td style="border: solid"><b>No</b></td>
+            <td style="border: solid"><b>Name of Examiner</b></td>
+            <td style="border: solid"><b>Name of the College</b></td>
+			<td style="border: solid"><b>Category</b></td>
+			<td style="border: solid"><b>Total No of Papers Valued</b></td>
+            <td style="border: solid"><b>Mandatory Deduction</b></td>
+			<td style="border: solid"><b>Eligible No Of Papers</td>
+            <td style="border: solid"><b>Remuneration</b></td>
+            <td style="border: solid"><b>Additional Maximum & Chairman fee</b></td>
+            <td style="border: solid"><b>Remuneration For Discussion</b></td>
+			<td style="border: solid"><b>Total</td>
+
+
+		</tr>
+		<tr style="border: solid">
+			   {% for i in obj %}
+		<tr style="border: solid">
+
+			<td style="border: solid">{{ i.no }}</td>
+			<td style="border: solid">{{ i.nameofexaminer}}</td>
+            <td style="border: solid">{{ i.nameofcollage}}</td>
+			<td style="border: solid">{{ i.category }}</td>
+			<td style="border: solid">{{ i.total_no_of_paper}}</td>
+            <td style="border: solid">{{ i.mandatory_deduction}}</td>
+            <td style="border: solid">{{ i.elligibel_no_of_papers}}</td>
+            <td style="border: solid">{{ i.remuneration}}</td>
+            <td style="border: solid">{{ i.additional_maximum_chairman_fee}}</td>
+            <td style="border: solid">{{ i.remunerationfor_decussiom}}</td>
+            <td style="border: solid">{{ i.totel}}</td>
+
+
+
+		</tr>
+        {% endfor %}
+
+
+		</tr>
+	</table>
+
+    </form>
+                    {# END SECTION #}
+
+            </div>
+        </div>
+    </div>
+    </div>
+     {% endblock %}

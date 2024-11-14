@@ -1,0 +1,62 @@
+{% extends 'temp/nav.html' %}
+{% block content %}
+
+
+
+<!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4">Chief Registration</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+{#                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>#}
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Chief Registration</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+<!-- About Start -->
+    <div class="container-xxl">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.1s">
+
+{#                    SECTION      #}
+
+	<table border="1">
+		<tr>
+            <td>Username</td>
+            <td>Email</td>
+            <td>phone no</td>
+            <td>course </td>
+            <td>sem</td>
+			<td>priority 1</td>
+            <td>priority 2</td>
+            <td>priority 3</td>
+
+		</tr>
+        {% for i in a %}
+		<tr>
+			<td>{{ i.user_name }}</td>
+			<td>{{ i.email_id }}</td>
+			<td>{{ i.phone_no }}</td>
+			<td>{{ i.course.course }}</td>
+            <td>{{ i.sem}}</td>
+            <td>{{ i.priority_1 }}</td>
+            <td>{{ i.priority_2 }}</td>
+            <td>{{ i.priority_3 }}</td>
+            <td><a href="/assign/assign/{{ i.additional_id }}">Assign</a></td>
+
+		</tr>
+        {% endfor %}
+	</table>
+
+{# END SECTION #}
+
+            </div>
+        </div>
+    </div>
+    </div>
+     {% endblock %}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cheif manage form</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>Name</td>
+			<td>Mail id</td>
+			<td>phone no</td>
+			<td>college name</td>
+			<td>experience</td>
+			<td>choice</td>
+			<td>Status</td>
+
+
+
+		</tr>
+		{% for i in c %}
+		<tr>
+			<td>{{ i.name }}</td>
+			<td>{{ i.email_id}}</td>
+			<td>{{ i.phone_no }}</td>
+			<td>{{ i.college_name }}</td>
+			<td>{{ i.experience }}</td>
+			<td>{{ i.choice }}</td>
+
+			<td>
+                <a href="/form/accept1/{{ i.form_id }}">Accept</a>
+                <a href="/form/reject1/{{ i.form_id }}">Reject</a>
+            </td>
+		</tr>
+         {% endfor %}
+	</table>
+
+</body>
+</html>

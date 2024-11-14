@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border="1">
+		  <tr>
+              <th>Additional Name</th>
+              <th>Priority 1</th>
+              <th>Priority 2</th>
+              <th>Priority 3</th>
+    </tr>
+        {% for i in a %}
+		<tr>
+			<td>{{ i.name }}</td>
+			<td>{{ i.priority_1}}</td>
+			<td>{{ i.priority_2}}</td>
+			<td>{{ i.priority_3}}</td>
+            <td><a href="/issuepaper/post/{{ i.additional_id }}">Assign Additional</a></td>
+		</tr>
+         {% endfor %}
+	</table>
+
+</body>
+</html>

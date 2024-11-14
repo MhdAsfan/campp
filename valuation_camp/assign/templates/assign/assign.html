@@ -1,0 +1,68 @@
+{% extends 'temp/nav.html' %}
+{% block content %}
+
+
+
+<!-- Page Header Start -->
+    <div class="container-fluid page-header py-6 my-6 mt-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center">
+            <h1 class="display-4 text-white animated slideInDown mb-4">Chief Registration</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+{#                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>#}
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Chief Registration</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+<!-- About Start -->
+    <div class="container-xxl">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.1s">
+
+{#                    SECTION      #}
+
+	<center>
+	<h2>Assign</h2>
+	<form method="post">
+        {% csrf_token %}
+		<table>
+			<tr>
+				<td>Additional name</td>
+				<td><input type="text" name="un" value="{{ v.user_name }}"></td>
+			</tr>
+			<tr>
+				<td>Paper</td>
+				<td>
+                    <select name="priority1">
+                    <option>--select--</option>
+                    {% for i in a %}
+                    <option value="{{ i.paper_id }}" >{{ i.course.course }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+			</tr>
+{#            <tr>#}
+{#                <select name="additional">#}
+{#                    {% for i in a %}#}
+{#                    <option value="{{ i.additional_id }}">{{ i.user_name }}</option>#}
+{#                    {% endfor %}#}
+{#                </select>#}
+{#            </tr>#}
+			<tr>
+
+				<td></td>
+				<td><input type="submit" value="submit"></td>
+			</tr>
+		</table>
+	</form>
+    {# END SECTION #}
+
+            </div>
+        </div>
+    </div>
+    </div>
+     {% endblock %}
