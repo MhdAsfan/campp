@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: campp
+    env: python
+    buildCommand: pip install -r requirements.txt
+#    startCommand: gunicorn your_project.wsgi:application
+    startCommand: python manage.py runserver
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9
+      - key: DATABASE_URL
+        fromDatabase:
+          name: your-django-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DJANGO_ALLOWED_HOSTS
+        value: .onrender.com
+      - key: DEBUG
+        value: False
+
+databases:
+  - name: your-django-db
+    databaseName: valuation-camp
+    user: your_db_user
+    plan: free
